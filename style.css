@@ -3,10 +3,7 @@
     padding:0;
     box-sizing: border-box;
     max-width: 100vw;
-}a, a:hover, a:focus, a:active {
-      text-decoration: none !important;
-      color: inherit !important;
- }.fullPage{
+}.fullPage{
     background-color: black;
     height: fit-content;
     width: 100vw;
@@ -43,7 +40,7 @@
     font-weight: normal;
     font-family: 'Marcellus', serif;
     margin: 15px 0px;
-}.hero p, .footer p{
+}.hero p, .footer p, .section2>p{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     margin-top: 8px;
