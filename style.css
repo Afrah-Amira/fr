@@ -3,10 +3,10 @@
     padding:0;
     box-sizing: border-box;
     max-width: 100vw;
-}a{
- text-decoration:none;
-    color:black;
-}.fullPage{
+}a, a:hover, a:focus, a:active {
+      text-decoration: none !important;
+      color: inherit !important;
+ }.fullPage{
     background-color: black;
     height: fit-content;
     width: 100vw;
