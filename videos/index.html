@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrah Amira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Marcellus&family=Rancho&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    <script src="https://threejs.org/build/three.js"></script> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://unpkg.com/three@0.117.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.117.1/examples/jsm/"
+              }
+            }
+          </script>
+    
+    
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #map { 
+            height: 70vw;
+            width:70vw; 
+            margin-top: 10px;
+        }.leaflet-routing-container{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div class="fullPage">
+
+    <div class="navBar">
+        <i class="bi bi-list" style="font-size: 32px;"></i>
+        <img src="logo-removebg-preview.png" alt="Afrah Amira" class="logo">
+        <i class="bi bi-chat"></i>
+    </div>
+
+    
+    <div class="hero">
+        <h2>VOTRE OCCASION, NOTRE EXPERTISE</h2>
+        <h1>Afrah Amira donne vie à toutes vos envies !</h1>
+        <!-- <canvas id="khatem">
+
+        </canvas> -->
+        <div class="video1">
+            <video
+            id="vidd1"
+            class="video-js"
+            controls
+            preload="auto"
+            width="640"
+            height="264"
+            data-setup="{}"
+            >
+            <source src="videos/vid2.mp4" type="video/mp4" />
+          </video>
+    
+        </div>
+        <p>Fort de ses 31 ans d’expertise, Afrah Amira vous propose des prestations complètes alliant des saveurs originales et authentiques, des équipes qualifiées et passionnées ou encore un accompagnement rigoureux dans le suivi de vos préparatifs.</p>
+    </div>
+
+    <div class="section1">
+        <h1>Nos services</h1>
+        <div class="services">
+            <div style="background-image: url('./images/materiel.jpg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
+            <div class="filter">Matériel</div>
+        </div>
+        <div class="services">
+            <div style="background-image: url('./images/decoration.jpg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
+            <div class="filter">Décoration</div>
+        </div>
+        <div class="services">
+            <div style="background-image: url('./images/gastronomie.jpg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
+            <div class="filter">Gastronomie</div>
+        </div>
+        <div class="services">
+            <div style="background-image: url('./images/animation.jpg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
+            <div class="filter">Animation</div>
+        </div>
+        <div class="services">
+            <div style="background-image: url('./images/cameraMan.jpeg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
+            <div class="filter">AudioVisuel</div>
+        </div>
+    </div>
+    <div class="section2">
+        <h1>Panier</h1>
+        <h2>Afrah Amira fornit une large gamme de services, le choix est le vôtre</h2>
+        <div style="position:relative; width:100%; height:300px; display:flex; margin: 20px; ">
+            <div class="sideImg" style="background-image: url('./images/gastronomie1.jpg'); "></div>
+            <div class="sideDiv" >
+                <p style="font-size:18px; color:#ffd700; padding-left: 10px;">GASTRONOMIE</p>
+                <p style="font-size: 12px; margin: 10px 0;"><b>MENU ENTREPRISES</b></p>
+                <ul style="font-size: 10px; list-style: none; ">
+                    <li>PAUSE CAFE & COCKTAIL</li>
+                    <li>REPAS D'AFFAIRE</li>
+                    <li>SPECIAL RAMADAN</li>
+                </ul>
+                <p style="font-size: 12px; margin: 10px 0;"><b>MENU PARTICULIERS</b></p>
+                <ul style="font-size: 10px; list-style: none;">
+                    <li>MARIAGE</li>
+                    <li>ANNIVERSAIRE</li> 
+                </ul>
+            </div>
+        </div>
+        <div style="position:relative; width:100%; height:300px; display:flex; margin: 20px; ">
+            <div class="sideDiv" style="text-align: right;">
+                <p style="font-size:18px; color:#ffd700; padding-right: 10px;">DECORATION</p>
+                <p style="font-size: 12px; margin: 10px 0;" class="pR"><b>SPECIALISTES D'ART</b></p>
+                <ul style="font-size: 10px; list-style: none;">
+                    <li class="liR">CHAPITEAUX</li>
+                    <li class="liR">STRUCTURES</li>
+                    <li class="liR">ESTRADES</li>
+                    <li class="liR">MOQUETTES</li>
+                    <li class="liR">ART DE TABLE</li>
+                    <li class="liR">LUMINAIRES</li>
+                    <li class="liR">DECO FLORALE</li>
+                </ul>
+            </div>
+            <div class="sideImg" style="background-image: url('./images/decoration15.jpg'); background-position:left;"></div>
+        </div>
+        <div style="position:relative; width:100%; height:300px; display:flex; margin: 20px; ">
+            <div class="sideImg" style="background-image: url('./images/audioVis.png'); "></div>
+            <div class="sideDiv" >
+                <p style="font-size:18px; color:#ffd700; padding-left: 10px;">AUDIOVISUEL</p>
+                <p style="font-size: 12px; margin: 10px 0;"><b>GARDER LES BONS SOUVENIRS</b></p>
+                <ul style="font-size: 10px; list-style: none; ">
+                    <li>PLASMAS</li>
+                    <li>PHOTOS + CAMERAS</li>
+                    <li>ECLAIRAGE</li>
+                    <li>SONORISATION</li>
+                    <li>ARRANGEMENTS</li>
+                </ul>
+            </div>
+        </div>
+        <div style="position:relative; width:100%; height:300px; display:flex; margin: 20px; ">
+            <div class="sideDiv" style="text-align: right;">
+                <p style="font-size:18px; color:#ffd700; padding-right: 10px;">ANIMATION</p>
+                <p style="font-size: 12px; margin: 10px 0;" class="pR"><b>AMUSEZ-VOUS!</b></p>
+                <ul style="font-size: 10px; list-style: none; ">
+                    <li class="liR">ORCHESTRES</li>
+                    <li class="liR">CHANTEURS</li>
+                    <li class="liR">HUMORISTES</li>
+                    <li class="liR">FOLKLORE</li>
+                </ul>
+            </div>
+            <div class="sideImg" style="background-image: url('./images/animation1.jpg'); "></div>
+        </div>
+        <div style="position:relative; width:100%; height:300px; display:flex; margin: 20px; ">
+            <div class="sideImg" style="background-image: url('./images/team.jpg'); "></div>
+            <div class="sideDiv" >
+                <p style="font-size:18px; color:#ffd700; padding-left: 10px;">NOS AGENTS</p>
+                <p style="font-size: 12px; margin: 10px 0;"><b>MIS A VOTRE SERVICE</b></p>
+                <ul style="font-size: 10px; list-style: none; ">
+                    <li>SERVEURS</li>
+                    <li>CUISINIERS</li>
+                    <li>NETTOYAGE</li>
+                    <li>SECURITE</li>
+                    <li>VOITURIERS</li>
+                </ul>
+            </div>
+        </div>
+        <div style="position:relative; width:100%; height:300px; display:flex; margin: 20px; ">
+            <div class="sideDiv" style="text-align: right;">
+                <p style="font-size:18px; color:#ffd700; padding-right: 10px;">NOS PLUS</p>
+                <p style="font-size: 12px; margin: 10px 0;" class="pR"><b>SATISFACTION AVANT TOUS</b></p>
+                <ul style="font-size: 10px; list-style: none; ">
+                    <li class="liR">LISTE DE MARIAGE</li>
+                    <li class="liR">SALLE DES FETES</li>
+                    <li class="liR">VOITURE DE LUXE</li>
+                    <li class="liR">INVITATIONS</li>
+                    <li class="liR">CARTE MENU</li>
+                </ul>
+            </div>
+            <div class="sideImg" style="background-image: url('./images/inv.jpg'); "></div>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="logo-removebg-preview.png" alt="Afrah Amira" style="height:80px;">
+        <p style="width: 80vw;"><i class="bi bi-geo-alt"></i> N° 88, Bloc 10, Qods II, Taza 35000, Maroc <br>
+            <i class="bi bi-telephone"></i> 0658-355426</p>
+        <div>
+            <h2>Heureux de vous servir</h2>
+            <a href="./contactez-nous/">
+                <button class="contactUs">Contacter nous!</button>
+            </a>
+        </div>
+        <div>
+            <h2 >Notre localisation en map</h2>
+            <div id="map"></div>
+        </div>
+    </div>
+    <div style="background-color: rgb(37, 37, 37); height: 50px; width: 100vw; color: #ffd700; display: flex; justify-content: center; align-items: center;">
+        MZ Polyservices | &#169;2023
+    </div>
+
+    
+    
+    
+    
+    
+
+
+</div>
+<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+<script src="script.js" type="module"></script>
+<script>
+    var player = videojs('vidd1', { autoplay: 'muted', controls:true, loop: true, fluid: true});
+    var map = L.map('map').setView([34.235038, -3.981148], 16);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href=\"http://www.openstreetmap.org/copyright\">MZ Polyservices</a>'
+            }).addTo(map);
+            var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+                maxZoom: 20,
+                subdomains:['mt0','mt1','mt2','mt3'],
+                scrollWheelZoom: false
+            });
+            googleStreets.addTo(map);
+
+            L.marker([34.235038, -3.981148]).addTo(map).bindPopup('Bienvenue chez Afrah Amira!');
+
+            $('.leaflet-control-attribution a:first, .leaflet-control-attribution span:first').hide();
+</script>
+</body>
+</html>
