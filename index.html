@@ -31,8 +31,12 @@
             height: 70vw;
             width:70vw; 
             margin-top: 10px;
+            border:#ffd700 solid 1px;
         }.leaflet-routing-container{
             display:none;
+        }.leaflet-control-zoom a{
+            color:#ffd700 !important;
+            background-color: rgb(22, 22, 22) !important;
         }
     </style>
 </head>
@@ -42,16 +46,13 @@
     <div class="navBar">
         <i class="bi bi-list" style="font-size: 32px;"></i>
         <img src="logo-removebg-preview.png" alt="Afrah Amira" class="logo">
-         <a href="./contactez-nous/" style="color:#ffd700 !important;"><i class="bi bi-chat"></i></a>
+        <a href="./contactez-nous/" style="color:#ffd700 !important;"><i class="bi bi-chat"></i></a>
     </div>
 
     
     <div class="hero">
         <h2>VOTRE OCCASION, NOTRE EXPERTISE</h2>
         <h1>Afrah Amira donne vie à toutes vos envies !</h1>
-        <!-- <canvas id="khatem">
-
-        </canvas> -->
         <div class="video1">
             <video
             id="vidd1"
@@ -64,7 +65,7 @@
             >
             <source src="videos/vid2.mp4" type="video/mp4" />
           </video>
-    
+
         </div>
         <p>Fort de ses 31 ans d’expertise, Afrah Amira vous propose des prestations complètes alliant des saveurs originales et authentiques, des équipes qualifiées et passionnées ou encore un accompagnement rigoureux dans le suivi de vos préparatifs.</p>
     </div>
@@ -92,9 +93,15 @@
             <div class="filter">AudioVisuel</div>
         </div>
     </div>
+   
     <div class="section2">
-        <h1>Panier</h1>
-        <h2>Afrah Amira fornit une large gamme de services, le choix est le vôtre</h2>
+        <h2>DES TENDANCES À L’AIR DU TEMP</h2>
+        <h1 style="text-align:center;">Expertise, qualité & réactivité</h1>
+        <canvas id="khatem"></canvas>
+        <script src="./script.js" type="module"></script>
+        <p style="text-align: center; margin-bottom:36px;">Des recettes et des créations inventives sont élaborées pour le simple plaisir des papilles de vos convives, en privilégiant les produits nobles.</p>
+        <h1>Tonnes de choix</h1>
+        <h2>AFRAH AMIRA FOURNIT UNE LARGE GAMME DE SERVICES, LE CHOIX EST LE VOTRE.</h2>
         <div style="position:relative; width:100%; height:300px; display:flex; margin: 20px; ">
             <div class="sideImg" style="background-image: url('./images/gastronomie1.jpg'); "></div>
             <div class="sideDiv" >
@@ -191,7 +198,7 @@
         <div>
             <h2>Heureux de vous servir</h2>
             <a href="./contactez-nous/">
-                <button class="contactUs">Contacter nous!</button>
+                <button class="contactUs">Contactez nous!</button>
             </a>
         </div>
         <div>
@@ -213,13 +220,12 @@
 </div>
 <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
-<script src="script.js" type="module"></script>
 <script>
     var player = videojs('vidd1', { autoplay: 'muted', controls:true, loop: true, fluid: true});
     var map = L.map('map').setView([34.235038, -3.981148], 16);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
-                attribution: '&copy; <a href=\"http://www.openstreetmap.org/copyright\">MZ Polyservices</a>'
+                attribution: '&copy; <a href=\"http://www.openstreetmap.org/copyright\" >MZ Polyservices</a>'
             }).addTo(map);
             var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
                 maxZoom: 20,
@@ -227,10 +233,22 @@
                 scrollWheelZoom: false
             });
             googleStreets.addTo(map);
+            // var  markerIcon= L.marker([".$vehicule_lat1.", ".$vehicule_lng1."], {icon: markerIcon}).addTo(map).bindPopup('<div style=\"display:flex;justify-content:center;\"> Name: ".$vehicule_marque1." <br/>".$vehicule_immatriculation1."</div>').openPopup();
+            var markerIcon = L.icon({
+                iconUrl: 'location-icon.png',
 
-            L.marker([34.235038, -3.981148]).addTo(map).bindPopup('Bienvenue chez Afrah Amira!');
+                iconSize:     [30, 'auto'], // size of the icon
+
+                iconAnchor:   [21, 36], // point of the icon which will correspond to marker's location
+
+                popupAnchor:  [-6, -40] // point from which the popup should open relative to the iconAnchor
+            });
+            L.marker([34.235038, -3.981148], {icon: markerIcon}).addTo(map).bindPopup('Bienvenue chez Afrah Amira!').openPopup();;
 
             $('.leaflet-control-attribution a:first, .leaflet-control-attribution span:first').hide();
+
+
+            
 </script>
 </body>
 </html>
