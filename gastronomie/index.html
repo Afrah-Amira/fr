@@ -345,10 +345,43 @@ a:hover {
 
 <div class="fullPage">
     <div class="loader"></div>
-    <div class="navBar">
-        <i class="bi bi-list" style="font-size: 32px;"></i>
-        <a href="../" id="toHome"><img src="../logo-removebg-preview.png" alt="Afrah Amira" class="logo" ></a>
-        <a href="../contactez-nous/" style="color:#ffd700 !important;" id="toCntct"><i class="bi bi-chat" ></i></a>
+  <div class="navBar">
+      <i class="bi bi-list menu-btn" style="font-size: 32px;"></i>
+      <a href="../" id="toHome"><img src="../logo-removebg-preview.png" alt="Afrah Amira" class="logo" ></a>
+      <a href="../contactez-nous/" style="color:#ffd700 !important;" id="toCntct"><i class="bi bi-chat" ></i></a>
+  </div>
+  <div class="side-bar" id="side-bar">
+      <div class="close-btn">
+          <i class="bi bi-x-circle"></i>
+      </div>
+      
+      <div style="height:88px; width:250px; padding: 0px 25px; display:flex; justify-content: space-around; align-items: center;">
+          <div class="profileCon" style="margin-top:0px;">
+              <div class="profilePic" style="height: 60px; width: 60px;">
+                  <img src="../logo-removebg-preview.png" style="width:50px; border-radius:50%">
+              </div>
+          </div>
+          <div style="display:flex; justify-content:center; flex-direction: column;">
+              <div style="color: #ffd700; font-size: 12px;"><h1>العربية</h1></div>
+          </div>
+      </div>
+      
+      <div class="menu">
+          <div class="item"><a href="../"><i class="bi bi-house-fill"></i>Home</a></div>
+          <div class="item"><a href="#" class="sub-btn"><i class="bi bi-clipboard-check"></i>Services<i class="bi bi-caret-right-fill dropdown"></i></a>
+              <div class="sub-menu">
+                      <a href="../materiel/index.html"><i class="bi bi-music-player-fill"></i>Matériel</a>
+                      <a href="../decoration/index.html"><i class="bi bi-balloon"></i>Décoration</a>
+                      <a href="../gastronomie/index.html" style="display:none;"><i class="bi bi-suit-heart-fill"></i>Gastronomie</a>
+                      <a href="../animation/index.html"><i class="bi bi-sliders2-vertical"></i>Animation</a>
+                      <a href="#"><i class="bi bi-camera-reels"></i>AudioVisuel</a>
+              </div>
+          </div>
+          <div class="item"><a href="../contactez-nous/index.html" class="sub-btn"><i class="bi bi-receipt-cutoff"></i>Devis</a></div>
+          <div class="item"><a href="#"><i class="bi bi-people-fill"></i>A propos de nous</a></div>
+          <div class="item"><a href="#"><i class="bi bi-qr-code-scan"></i>Scanner</a></div>
+          <div class="item"><a href="#footer"><i class="bi bi-envelope-paper"></i>Contactez-nous</a></div>
+        </div>
     </div>
     <div style="background-color: black; color: white;">
         <h2 class="subTitle">Une expérience gastronomique d’émotion et de plaisir pour votre événement.</h2>
@@ -580,9 +613,42 @@ var menu = [];
         $(document).ready(function () {
                 $('.loader').addClass('loader-hid');
             });
-            $('a').click(function () {
+            $('#toHome').click(function () {
                 $('.loader').removeClass('loader-hid');
             });
+            $('#toCntct').click(function () {
+                $('.loader').removeClass('loader-hid');
+            });
+           $(document).ready(function () {
+        $(".sub-btn").click(function () {
+            $(this).next('.sub-menu').slideToggle();
+            $(this).find('.dropdown').toggleClass('rotate');
+            document.getElementById("side-bar").style.zIndex = "4";
+            
+        });
+        $('.menu-btn').click(function () {
+            $('.side-bar').css("left","0");
+            $('.menu-btn').css("color","white");
+        });
+        $('.close-btn').click(function () {
+            $('.side-bar').css("left","-100%");
+            $('.menu-btn').css("color","#ffd700");
+        });
+
+        $('body').bind('click', function(e){
+            if($(e.target).hasClass("side-bar")){
+                
+            }else if($(e.target).hasClass("menu-btn")){
+                
+            }else if($(e.target).hasClass("sub-btn")){
+                
+            }else{
+                $('.side-bar').css("left","-100%");
+                $('.menu-btn').css("color","#ffd700");
+            }
+        });
+      });
+
            
 
     </script>
