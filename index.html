@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en ar">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,10 +22,7 @@
                 "three/addons/": "https://unpkg.com/three@0.117.1/examples/jsm/"
               }
             }
-          </script>
-    
-    
-    
+        </script>
     <link rel="stylesheet" href="style.css">
     <style>
         #map { 
@@ -38,20 +36,61 @@
             color:#ffd700 !important;
             background-color: rgb(22, 22, 22) !important;
             font-family: 'Marcellus', serif !important;
-            text-align: center !important;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-<div class="fullPage">
+<div class="fullPage" id="fullPage">
     <div class="loader"></div>
+    <a href="#fullPage"><i class="bi bi-arrow-up-circle-fill" style="color: #ffd700;
+        font-size: 40px;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        z-index: 100;"></i></a>
     <div class="navBar">
-        <i class="bi bi-list" style="font-size: 32px;"></i>
+        <i class="bi bi-list menu-btn" style="font-size: 32px;"></i>
         <img src="logo-removebg-preview.png" alt="Afrah Amira" class="logo">
-        <a href="./contactez-nous/" style="color:#ffd700 !important;"><i class="bi bi-chat"></i></a>
+        <a href="./contactez-nous/" style="color:#ffd700 !important;"><i class="bi bi-chat" id="toCntct"></i></a>
     </div>
 
-    
+    <div class="side-bar" id="side-bar">
+        <div class="close-btn">
+            <i class="bi bi-x-circle"></i>
+        </div>
+        
+        <div style="height:88px; width:250px; padding: 0px 25px; display:flex; justify-content: space-around; align-items: center;">
+            <div class="profileCon" style="margin-top:0px;">
+                <div class="profilePic" style="height: 60px; width: 60px;">
+                    <img src="logo-removebg-preview.png" style="width:50px; border-radius:50%">
+                </div>
+            </div>
+            <div style="display:flex; justify-content:center; flex-direction: column;">
+                <div style="color: #ffd700; font-size: 12px;"><h1>العربية</h1></div>
+            </div>
+        </div>
+        
+        <div class="menu">
+            <div class="item" style="display:none;"><a href="../"><i class="bi bi-house-fill"></i>Home</a></div>
+            <div class="item"><a href="#" class="sub-btn"><i class="bi bi-clipboard-check"></i>Services<i class="bi bi-caret-right-fill dropdown"></i></a>
+                <div class="sub-menu">
+                        <a href="./materiel/index.html"><i class="bi bi-music-player-fill"></i>Matériel</a>
+                        <a href="./decoration/index.html"><i class="bi bi-balloon"></i>Décoration</a>
+                        <a href="./gastronomie/index.html"><i class="bi bi-suit-heart-fill"></i>Gastronomie</a>
+                        <a href="./animation/index.html"><i class="bi bi-sliders2-vertical"></i>Animation</a>
+                        <a href="#"><i class="bi bi-camera-reels"></i>AudioVisuel</a>
+                </div>
+            </div>
+            <div class="item"><a href="contactez-nous/index.html" class="sub-btn"><i class="bi bi-receipt-cutoff"></i>Devis</a>
+            </div >
+            <div class="item"><a href="../../clients/"><i class="bi bi-people-fill"></i>A propos de nous</a></div>
+            <div class="item"><a href="../../qrscanner/"><i class="bi bi-qr-code-scan"></i>Scanner</a></div>
+            <div class="item"><a href="#footer"><i class="bi bi-envelope-paper"></i>Contactez-nous</a></div>
+        </div>
+    </div>
+   
+
     <div class="hero">
         <h2>VOTRE OCCASION, NOTRE EXPERTISE</h2>
         <h1>Afrah Amira donne vie à toutes vos envies !</h1>
@@ -74,19 +113,20 @@
 
     <div class="section1">
         <h1>Nos services</h1>
-        <div class="services">
+        <h2>CLIQUEZ-VOUS POUR LES DECOUVRIR!</h2>
+        <div class="services" id="mat">
             <div style="background-image: url('./images/materiel.jpg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
             <div class="filter">Matériel</div>
         </div>
-        <div class="services">
+        <div class="services" id="dec">
             <div style="background-image: url('./images/decoration.jpg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
             <div class="filter">Décoration</div>
         </div>
-        <div class="services">
+        <div class="services" id="gas">
             <div style="background-image: url('./images/gastronomie.jpg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
             <div class="filter">Gastronomie</div>
         </div>
-        <div class="services">
+        <div class="services" id="anim">
             <div style="background-image: url('./images/animation.jpg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
             <div class="filter">Animation</div>
         </div>
@@ -94,6 +134,9 @@
             <div style="background-image: url('./images/cameraMan.jpeg'); background-size: cover; background-position: center; width:90vw; height:230px;"></div>
             <div class="filter">AudioVisuel</div>
         </div>
+        <a href="./contactez-nous/">
+            <button class="contactUs">Contactez nous!</button>
+        </a>
     </div>
    
     <div class="section2">
@@ -193,7 +236,7 @@
             <div class="sideImg" style="background-image: url('./images/inv.jpg'); "></div>
         </div>
     </div>
-    <div class="footer">
+    <div class="footer" id="footer">
         <img src="logo-removebg-preview.png" alt="Afrah Amira" style="height:80px;">
         <p style="width: 80vw;"><i class="bi bi-geo-alt"></i> N° 88, Bloc 10, Qods II, Taza 35000, Maroc <br>
             <i class="bi bi-telephone"></i> 0658-355426</p>
@@ -213,17 +256,47 @@
     </div>
 
     
-    
-    
-    
-    
-
 
 </div>
+
+
 <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
 <script>
-    var player = videojs('vidd1', { autoplay: 'muted', controls:true, loop: true, fluid: true});
+    $(document).ready(function () {
+        $(".sub-btn").click(function () {
+            $(this).next('.sub-menu').slideToggle();
+            $(this).find('.dropdown').toggleClass('rotate');
+            document.getElementById("side-bar").style.zIndex = "4";
+
+            
+        });
+        $('.menu-btn').click(function () {
+            $('.side-bar').css("left","0");
+            $('.menu-btn').css("color","white");
+        });
+        $('.close-btn').click(function () {
+            $('.side-bar').css("left","-100%");
+            $('.menu-btn').css("color","#ffd700");
+        });
+
+        $('body').bind('click', function(e){
+            if($(e.target).hasClass("side-bar")){
+                
+            }else if($(e.target).hasClass("menu-btn")){
+                
+            }else if($(e.target).hasClass("sub-btn")){
+                
+            }else{
+                $('.side-bar').css("left","-100%");
+                $('.menu-btn').css("color","#ffd700");
+
+            }
+        });
+    });
+
+
+    var player = videojs('vidd1', { autoplay: true, mute:true, controls:true, loop: true, fluid: true});
     var map = L.map('map').setView([34.235038, -3.981148], 16);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
@@ -238,6 +311,7 @@
             // var  markerIcon= L.marker([".$vehicule_lat1.", ".$vehicule_lng1."], {icon: markerIcon}).addTo(map).bindPopup('<div style=\"display:flex;justify-content:center;\"> Name: ".$vehicule_marque1." <br/>".$vehicule_immatriculation1."</div>').openPopup();
             var markerIcon = L.icon({
                 iconUrl: 'location-icon.png',
+                // shadowUrl: 'leaf-shadow.png',
 
                 iconSize:     [30, 'auto'], // size of the icon
 
@@ -248,14 +322,30 @@
             L.marker([34.235038, -3.981148], {icon: markerIcon}).addTo(map).bindPopup('Bienvenue chez Afrah Amira!').openPopup();;
 
             $('.leaflet-control-attribution a:first, .leaflet-control-attribution span:first').hide();
-
             $('.leaflet-top').addClass('leaflet-bottom');
             $('.leaflet-top').removeClass('leaflet-top');
             $(document).ready(function () {
                 $('.loader').addClass('loader-hid');
             });
-
-            
+            $('#toCntct').click(function () {
+                $('.loader').removeClass('loader-hid');
+            });
+            $('#mat').click(function () {
+                $('.loader').removeClass('loader-hid');
+                window.location.replace("./materiel/index.html");
+            });
+            $('#dec').click(function () {
+                $('.loader').removeClass('loader-hid');
+                window.location.replace("./decoration/index.html");
+            });
+            $('#gas').click(function () {
+                $('.loader').removeClass('loader-hid');
+                window.location.replace("./gastronomie/index.html");
+            });
+            $('#anim').click(function () {
+                $('.loader').removeClass('loader-hid');
+                window.location.replace("./animation/index.html");
+            });
 </script>
 </body>
 </html>
