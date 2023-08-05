@@ -39,7 +39,8 @@
         renderer.render(scene, camera)
     });
     controls.target.set(0, 0, 0);
-    controls.enableZoom = true;
+    controls.enableZoom = false;
+    controls.enableRotate  = false;
     controls.update();
 
     // load the object
