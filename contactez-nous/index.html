@@ -79,13 +79,14 @@
         }.datainput1:focus {
             outline: none;
         }.contactForm{
-            margin-left: 50px;
+    
             background-color: rgba(255,255,255,.1);
             width: 95vw;
             height: fit-content;
             color:rgba(224, 225, 221);
             display: flex;
-            justify-content: flex-start;
+            flex-direction: column; 
+            justify-content: space-around;
             align-items: flex-start;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -248,19 +249,22 @@
     <div class="maj">
         <div class="maj1">
             <div class="contactForm" id="contactForm">
-                <h1 style="color: #ffd700;">Demander un devis facilement!</h1>
-                <form action="https://formsubmit.co/satmessagerietaza@gmail.com" method="POST">
+                <h1 class="title">Demander un devis facilement!</h1>
+                <form action="https://formsubmit.co/contact.youssefelfellahi@gmail.com" method="POST">
                     <div>
-                        <label class="datalab1" for="lieu">Nom et Prénom</label><input class="datainput1" type="text" name="lieu" required> <br>  
+                        <label class="datalab1" for="nom">Nom et Prénom</label><input class="datainput1" type="text" name="nom" required> <br>  
                     </div>
                     <div>
-                        <label class="datalab1" for="lieu">Téléphone</label><input class="datainput1" type="text" name="lieu" required> <br>  
+                        <label class="datalab1" for="tel">Téléphone</label><input class="datainput1" type="text" name="tel" required> <br>  
                     </div>
                     <div>
-                        <label class="datalab1" for="lieu">Lieu de l'événement</label><input class="datainput1" type="text" name="lieu" required> <br>  
+                        <label class="datalab1" for="mail">Email</label><input class="datainput1" type="email" name="email" required> <br>  
                     </div>
                     <div>
-                        <label class="datalab1" for="date">Date de l'évènement</label><input class="datainput1" type="email" name="date" required><br>
+                        <label class="datalab1" for="lieu">Lieu de l'évènement</label><input class="datainput1" type="text" name="lieu" required> <br>  
+                    </div>
+                    <div>
+                        <label class="datalab1" for="date">Date de l'évènement</label><input class="datainput1" type="text" name="date" required><br>
                     </div>
                     <div>
                         <label class="datalab1" for="budjet">Budget</label><input class="datainput1" type="text" name="budjet" required><br>
@@ -277,14 +281,14 @@
         <div class="maj2">      
             <div class="divcont" style="display:flex;justify-content:center;">
                 <ul class="contactElements">
-                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 23px; position: relative;top: -1px;" class="fa-brands fa-whatsapp"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>+212 668-787740</b></span></li></a>
-                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 23px; position: relative;top: -3px;" class="bi bi-telephone"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>+212 535-674588</b></span></li></a>
-                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 23px; position: relative;top: -3px;" class="bi bi-phone"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>+212 668-787740</b></span></li></a>
-                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 23px; position: relative;top: -3px;" class="bi bi-geo-alt"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>Localisation en map</b></span></li></a>
-                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 20px; position: relative;top: -3px;" class="bi bi-envelope"></i></span><span style="display: inline-block;width:200px;text-align: center; margin-left:3px;"><b>afrah-amira@gmail.com</b></span></li></a>
+                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 23px;" class="fa-brands fa-whatsapp"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>+212 668-787740</b></span></li></a>
+                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 23px;" class="bi bi-telephone"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>+212 535-674588</b></span></li></a>
+                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 23px;" class="bi bi-phone"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>+212 668-787740</b></span></li></a>
+                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 23px;" class="bi bi-geo-alt"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>Localisation en map</b></span></li></a>
+                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color:#ffd700; font-size: 20px;" class="bi bi-envelope"></i></span><span style="display: inline-block;width:200px;text-align: center; margin-left:3px;"><b>afrah-amira@gmail.com</b></span></li></a>
                     <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px; line-height: 25px;"><i style="color: #ffd700; font-size: 20px; position: relative;top: 2px;" class="fa-solid fa-earth-americas"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>Afrah Amira</b></span></li></a>
                     <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px; line-height: 25px;"><i style="color: #ffd700; font-size: 22px; position: relative;top: 3px;" class="fa-brands fa-facebook"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>Afrah Amira</b></span></li></a>
-                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i class="bi bi-instagram" style="color: #ffd700; font-size: 22px; position: relative;top: -2px;"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>Afrah Amira</b></span></li></a>
+                    <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i class="bi bi-instagram" style="color: #ffd700; font-size: 22px;"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>Afrah Amira</b></span></li></a>
                     <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i class="fa-brands fa-tiktok" style="color: #ffd700; font-size: 20px; position: relative;top: 1px;"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>Afrah Amira</b></span></li></a>
                     <a href="#" target="_blank"><li><span style="width: 20px ; display: inline-block; margin-left: 6px;"><i style="color: #ffd700 ; font-size: 20px; position: relative;top: 1px;" class="fa-brands fa-linkedin"></i></span><span style="display: inline-block;width: 200px;text-align: center;"><b>Afrah Amira</b></span></li></a>
                 </ul>
